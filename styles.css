@@ -1,0 +1,138 @@
+/* External/Global Styles */
+@font-face {
+    font-family: Tektur;
+    src: url(./Tektur/Tektur-VariableFont_wdth\,wght.ttf);
+}
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+:root
+{
+    --whiteColor: #f6f1f1;
+    --lightBlueColor: #19a2ce;
+    --tealColor: #146c94;
+    --darkBlueColor: #0a2647;
+    --blackColor: #000000;
+    color: #000000;
+    background-color: var(--whiteColor);
+    font-family: Tektur, "Brush Script MT", Arial;
+}
+
+.page 
+{
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+}
+
+.hidden
+{
+    display: none;
+}
+
+/* --------------------- */
+
+/* Header Styles */
+
+.header
+{
+    font-weight: bold;
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+
+/* -------------- */
+
+/* startPage Styles */
+
+.startPage
+{
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.selectCharacter
+{
+    align-self: self-end;
+    font-size: 36px;
+}
+
+.startPagePanel
+{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.panelOne,
+.panelTwo
+{
+    display: grid;
+    grid-template: repeat(3, 150px) / repeat(2, 150px);
+}
+
+.panelOne h3, 
+.panelTwo h3
+{
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
+    font-size: 32px;
+}
+
+.batman
+{
+    background-image: url(./media/batman.jpeg);
+    background-size: cover;
+    border: 2px solid var(--darkBlueColor);
+    cursor: pointer;
+}
+.superman
+{
+    background-image: url(./media/superman.jpg);
+    background-size: cover;
+    border: 2px solid var(--darkBlueColor);
+    cursor: pointer;
+}
+.flash
+{
+    background-image: url(./media/flash.jpeg);
+    background-size: cover;
+    border: 2px solid var(--darkBlueColor);
+    cursor: pointer;
+}
+.wonderWomen
+{
+    background-image: url(./media/wonderWomen.jpeg);
+    background-size: cover;
+    border: 2px solid var(--darkBlueColor);
+    cursor: pointer;
+}
+
+.panelOne > div:hover,
+.panelTwo > div:hover
+{
+    transform: scale(0.8);
+}
+
+.panelOne > div::selection,
+.panelTwo > div::selection
+{
+    border: 2px solid var(--lightBlueColor)
+}
+
+
+
+
+
+
