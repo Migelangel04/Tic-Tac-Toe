@@ -18,20 +18,16 @@
     --darkBlueColor: #0a2647;
     --blackColor: #000000;
     color: #000000;
-    background-color: var(--whiteColor);
+    background-color: var(--tealColor);
     font-family: Tektur, "Brush Script MT", Arial;
 }
 
 .page 
 {
     display: grid;
-    grid-template-rows: 10vh 90vh;
+    grid-template-rows: 10% 90%;
 }
 
-.hidden
-{
-    display: none;
-}
 
 /* --------------------- */
 
@@ -40,12 +36,13 @@
 .header
 {
     font-weight: bold;
-    font-size: 42px;
+    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 50px;
+    padding: 5px;
+    background-color: var(--whiteColor);
 }
 
 /* -------------- */
@@ -54,23 +51,23 @@
 
 .startPage
 {
-    padding: 20px;
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    justify-items: center;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
 }
 
 .selectCharacter
 {
-    align-self: self-end;
-    font-size: 36px;
+    font-size: 32px;
+
 }
 
 .startPagePanel
 {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
@@ -78,7 +75,7 @@
 .panelTwo
 {
     display: grid;
-    grid-template: repeat(3, 150px) / repeat(2, 150px);
+    grid-template: 60px 100px 100px / repeat(2, 100px);
 }
 
 .panelOne h3, 
@@ -87,52 +84,196 @@
     grid-column: 1 / -1;
     justify-self: center;
     align-self: center;
-    font-size: 32px;
+    font-size: 24px;
 }
 
+.playerOne,
+.playerTwo
+{
+    background-size: cover;
+    border: 2px solid var(--darkBlueColor);
+    cursor: pointer;
+}
+
+#batman,
 .batman
 {
     background-image: url(./media/batman.jpeg);
-    background-size: cover;
-    border: 2px solid var(--darkBlueColor);
-    cursor: pointer;
 }
+#superman,
 .superman
 {
     background-image: url(./media/superman.jpg);
-    background-size: cover;
-    border: 2px solid var(--darkBlueColor);
-    cursor: pointer;
 }
+#flash,
 .flash
 {
     background-image: url(./media/flash.jpeg);
-    background-size: cover;
-    border: 2px solid var(--darkBlueColor);
-    cursor: pointer;
 }
+#wonderWomen,
 .wonderWomen
 {
     background-image: url(./media/wonderWomen.jpeg);
-    background-size: cover;
-    border: 2px solid var(--darkBlueColor);
-    cursor: pointer;
 }
+
+#thor,
+.thor
+{
+    background-image: url(./media/thor.jpeg);
+}
+
+#hulk,
+.hulk
+{
+    background-image: url(./media/hulk.jpeg);
+}
+
+#ironMan,
+.ironMan
+{
+    background-image: url(./media/ironMan.jpeg);
+}
+
+#captainMarvel,
+.captainMarvel
+{
+    background-image: url(./media/captainMarvel.jpeg);
+}
+
 
 .panelOne > div:hover,
 .panelTwo > div:hover
 {
-    transform: scale(0.8);
+    transform: scale(0.95);
 }
 
-.panelOne > div::selection,
-.panelTwo > div::selection
+.startGameButton
 {
-    border: 2px solid var(--lightBlueColor)
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 60px;
+    border-radius: 20%;
+    border: 4px solid var(--darkBlueColor);
+    cursor: pointer;
+    background-color: var(--whiteColor);
 }
 
+.startGameButton:hover
+{
+    transform: scale(0.9);
+}
+
+/* --------------- */
 
 
+/* gamePage Styles */
 
+.gamePage
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+}
 
+.playerOneScoreCard,
+.playerTwoScoreCard
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.game
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.gameTitle
+{
+    text-align: center;
+}
+
+.gameBoard
+{
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    border: 3px solid var(--darkBlueColor);
+    align-self: center;
+}
+
+.box
+{
+    border: 1px solid var(--darkBlueColor);
+    cursor: pointer;
+    background-size: cover;
+}
+
+/* --------------- */
+
+/* Overlay-Endgame styles */
+
+.overlay 
+{
+    position: fixed; /* Sit on top of the page content */ 
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .endGame
+  {
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    background-color: var(--darkBlueColor);
+    padding: 60px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .endgameMessage
+  {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--lightBlueColor);
+  }
+  
+  .restart
+  {
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: var(--blackColor);
+    border: 2px solid var(--blackColor);
+    color: var(--lightBlueColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+/* hidden display toggle */
+.hidden
+{
+    display: none;
+}
 

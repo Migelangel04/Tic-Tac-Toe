@@ -17,18 +17,18 @@
             <h2 class="selectCharacter">Select Character</h2>
             <div class="startPagePanel" id="startPagePanel">
                 <div class="panelOne" id="panelOne">
-                    <h3>Player One</h3>
-                    <div class="player batman"></div>
-                    <div class="player superman"></div>
-                    <div class="player flash"></div>
-                    <div class="player wonderWomen"></div>
+                    <h3 id="playerOneStartName" class="playerOneStartName">BATMAN</h3>
+                    <div class="playerOne" id="batman"></div>
+                    <div class="playerOne" id="superman"></div>
+                    <div class="playerOne" id="flash"></div>
+                    <div class="playerOne" id="wonderWomen"></div>
                 </div>
                 <div class="panelTwo" id="panelTwo">
-                    <h3>Player Two</h3>
-                    <div class="player batman"></div>
-                    <div class="player superman"></div>
-                    <div class="player flash"></div>
-                    <div class="player wonderWomen"></div>
+                    <h3 id="playerTwoStartName" class="playerTwoStartName">THOR</h3>
+                    <div class="playerTwo" id="thor"></div>
+                    <div class="playerTwo" id="hulk"></div>
+                    <div class="playerTwo" id="ironMan"></div>
+                    <div class="playerTwo" id="captainMarvel"></div>
                 </div>
             </div>
             <button class="startGameButton" id="startGameButton">
@@ -36,9 +36,49 @@
             </button>
         </div>
         <div class="gamePage hidden" id="gamePage">
-        
+            
+            <div class="playerOneScoreCard">
+                <h2 class="playerOneScoreName">Player One</h2>
+                <h2 class="playerOneScore">0</h2>
+            </div>
+
+            <div class="game">
+                <h2 class="gameTitle">
+                    Best of Three
+                </h2>
+
+                <div class="gameBoard" id="gameBoard">
+                    <div class="box" id="0"></div>
+                    <div class="box" id="1"></div>
+                    <div class="box" id="2"></div>
+                    <div class="box" id="3"></div>
+                    <div class="box" id="4"></div>
+                    <div class="box" id="5"></div>
+                    <div class="box" id="6"></div>
+                    <div class="box" id="7"></div>
+                    <div class="box" id="8"></div>
+                </div>
+            </div>
+
+            <div class="playerTwoScoreCard">
+                <h2 class="playerTwoScoreName">Player Two</h2>
+                <h2 class="playerTwoScore">0</h2>
+            </div>
+
         </div>
     </main>
+
+    <div class="overlay hidden">
+        <div class="endGame">
+            <div class="endgameMessage">
+                    
+            </div>
+
+            <button class="restart" type="button" onclick="document.location.reload()">
+                Go Again?
+            </button>
+        </div>
+    </div>
     
 </body>
 </html>
